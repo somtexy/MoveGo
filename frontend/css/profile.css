@@ -1,0 +1,16 @@
+*{box-sizing:border-box}html,body{margin:0;min-height:100%}:root{--cream:#fffdf8;--ink:#0d1011;--green:#009560}
+body{background:#111b18;color:var(--ink);font-family:Arial,Helvetica,sans-serif}
+.screen{width:100%;max-width:430px;min-height:100dvh;margin:auto;display:flex;flex-direction:column;overflow:hidden;background:var(--cream);position:relative}
+.header{padding:max(25px,env(safe-area-inset-top)) 18px 0;min-height:92px}
+.back{width:42px;height:42px;margin-left:-6px;display:grid;place-items:center;border-radius:50%;color:var(--ink)}.back:hover{background:#eef1ed}
+.back svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round}
+.intro{padding:4px 23px 0}.intro h1{font-size:clamp(27px,7vw,35px);line-height:1.13;letter-spacing:-1.15px;margin:0 0 14px;font-weight:800;white-space:nowrap}.intro h1 span{color:#009b65}
+.intro p{font-size:15px;margin:0;line-height:1.45}
+.profile-form{margin:40px 23px 0;position:relative;z-index:2}.name-field{height:52px;display:flex;align-items:center;gap:10px;border:1px solid #d8dcd6;border-radius:11px;background:#fff;padding:0 14px;transition:border-color .2s,box-shadow .2s}.name-field:focus-within{border-color:#008f60;box-shadow:0 0 0 3px #008f6020}
+.name-field svg{height:21px;width:21px;flex:none;fill:none;stroke:#1f4134;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}.name-field input{width:100%;border:0;outline:0;background:transparent;font:inherit;font-size:14px;color:var(--ink)}.name-field input::placeholder{color:#7f8480}
+.next{height:48px;width:100%;border:none;border-radius:11px;background:linear-gradient(105deg,#00885b,#05a564);color:white;font-size:15px;font-weight:700;cursor:pointer;margin-top:25px}.next:hover{filter:brightness(.96)}.next:active{transform:translateY(1px)}
+.error{color:#bf2f36;font-size:12px;margin:6px 4px 0;min-height:0}.error:empty{display:none}.notice{font-size:13px;line-height:1.5;color:#285443;margin:14px 1px 0}.notice:empty{display:none}
+.illustration{position:absolute;bottom:0;left:0;right:0;height:min(43dvh,360px);background:url('../assets/images/profile-welcome-art.jpg?v=1') center bottom/cover no-repeat;pointer-events:none}
+button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #e0ac2f;outline-offset:3px}
+@media(max-height:670px){.header{min-height:75px;padding-top:12px}.profile-form{margin-top:26px}.illustration{height:34dvh}}
+@media(min-width:600px){body{display:grid;place-items:center;min-height:100vh;padding:20px}.screen{min-height:640px;height:min(900px,calc(100dvh - 40px));border-radius:30px;box-shadow:0 22px 80px #0007}}

@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#ffffff"><title>Ride options | MoveGo</title><link rel="stylesheet" href="../css/ride-options.css?v=1"><script src="../js/theme.js?v=1" defer></script><script src="../js/ride-options.js?v=31" defer></script><link rel="stylesheet" href="../css/movego-back.css?v=option4-1">
+<script src="../js/movego-back.js?v=option4-1" defer></script>
+<!-- MOVEGO-RIDE-OPTIONS-3D-V1 -->
+<link rel="stylesheet" href="../css/ride-options-3d-icons.css?v=1">
+<script src="../js/ride-options-3d-icons.js?v=1" defer></script>
+</head>
+<body><main class="app"><header class="top"><a href="destination.html" aria-label="Back to destination search" class="back">&#8592;</a><h1>Choose your ride</h1><span class="badge">FARE PREVIEW</span></header>
+<section class="route"><div class="route-row"><span class="marker green"></span><div><small>Pickup</small><strong id="pickup">Not selected</strong></div></div><span class="connector"></span><div class="route-row"><span class="marker dark"></span><div><small>Destination</small><strong id="dropoff">Not selected</strong></div></div></section>
+<section class="map" aria-label="Illustrative map"><div class="map-caption">Map illustration · not a live map</div><img src="../assets/maps/demo-city.svg" alt="Stylized illustrative map; not a real route"><div class="map-pin">⌖</div></section>
+<section class="content"><div class="heading"><div><p class="eyebrow">CHOOSE A SERVICE</p><h2>Ride options</h2></div><span class="subtle">Prices in ₦</span></div><div class="warning"><strong>Backend-calculated starter fares.</strong> The amounts and durations shown use an illustrative trip. Fares are calculated using live routing and illustrative starter tariffs, not approved commercial prices. Ride booking remains unavailable.</div>
+<div id="options" class="options" role="group" aria-label="Available ride types"></div>
+<section class="details"><h3>Trip details</h3><div class="detail"><span>Driving distance</span><strong>—</strong></div><div class="detail"><span>Estimated fare</span><strong id="fare">—</strong></div><div class="detail"><span>Estimated duration</span><strong id="duration">—</strong></div><div class="detail"><span>Payment method</span><strong>Not configured</strong></div></section>
+<div class="footer"><p id="notice" role="status">Choose an option to see its sample fare.</p><button id="request" type="button" disabled>Request ride — not connected</button><a href="destination.html" class="edit">Edit locations</a></div></section></main></body></html>

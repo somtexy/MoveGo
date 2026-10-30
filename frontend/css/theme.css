@@ -1,0 +1,18 @@
+/* Applied only to post-registration screens that explicitly opt in. */
+:root{color-scheme:light}
+html[data-theme="dark"]{color-scheme:dark;--cream:#151e1a;--ink:#eef7f1;--green:#13bc7e}
+html[data-theme="dark"] body{color:#eef7f1;background:#080e0b}
+html[data-theme="dark"] .app{background:#101915}
+/* Map artwork remains visible as an illustration; app surfaces become dark. */
+html[data-theme="dark"] .map:after{content:"";position:absolute;inset:0;background:#08191240;pointer-events:none}
+html[data-theme="dark"] .bottom-sheet,html[data-theme="dark"] .drawer,html[data-theme="dark"] .search-panel{background:#17231d;color:#eef7f1}
+html[data-theme="dark"] .circle:not(.dark),html[data-theme="dark"] .origin,html[data-theme="dark"] .destination,html[data-theme="dark"] .search-panel input,html[data-theme="dark"] .toast{background:#24342b;color:#f0f8f2;border-color:#3d5145}
+html[data-theme="dark"] .circle.dark{background:#16a571;color:white}
+html[data-theme="dark"] .origin-small,html[data-theme="dark"] .hint,html[data-theme="dark"] .drawer-rating,html[data-theme="dark"] .drawer-head span:not(.drawer-rating span){color:#b5c3b9}
+html[data-theme="dark"] .menu-item,html[data-theme="dark"] .theme-row,html[data-theme="dark"] .drawer-head,html[data-theme="dark"] .suggestions button{border-color:#32463a;color:#eff6f0}
+html[data-theme="dark"] .category{color:#eef7f1}
+html[data-theme="dark"] .category.active,html[data-theme="dark"] .trip-preview{background:#134e37;color:#effff5}
+html[data-theme="dark"] .drawer-foot a{color:#dbeee0}
+html[data-theme="dark"] .avatar{background:#164c37;color:#b4ffe2}
+html[data-theme="dark"] .demo-badge{background:#203d30;color:#e5fff2}
+html[data-theme="dark"] .theme-switch:not([aria-checked="true"]){background:#526155}

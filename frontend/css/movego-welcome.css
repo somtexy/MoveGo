@@ -1,0 +1,35 @@
+:root{color-scheme:light;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden}body{background:#87c8e8}.welcome{isolation:isolate;position:relative;min-height:100vh;min-height:100svh;width:100%;overflow:hidden;background:linear-gradient(180deg,#7bd0ff 0%,#8bd0ec 41%,#3a7a60 78%,#102c30 100%)}.welcome-video{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;object-position:center center}.welcome-shade{pointer-events:none;position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(251,253,255,.03) 0%,rgba(255,255,255,0) 34%,rgba(3,21,19,0) 56%,rgba(5,21,23,.17) 74%,rgba(2,12,17,.65) 100%)}.brand{position:absolute;top:clamp(90px,15vh,260px);left:5%;right:5%;text-align:center;animation:brand-in 900ms cubic-bezier(.2,.9,.2,1) both}.brand-wordmark{display:flex;align-items:baseline;justify-content:center;font-weight:850;font-size:clamp(54px,11.8vw,125px);line-height:1;letter-spacing:-.075em;white-space:nowrap;text-shadow:0 2px 10px rgba(255,255,255,.06)}.brand-move{color:#041d2f}.brand-go{color:#008c45}.go-o{position:relative}.pin{position:absolute;left:14%;bottom:86%;width:36%;height:55%;display:block;color:#008c45;transform:rotate(5deg);animation:pin-in 1s .45s both}.pin svg{height:100%;width:100%}.brand h1{margin:clamp(10px,1.5vh,22px) 0 0;color:#284b55;font-weight:500;letter-spacing:.004em;font-size:clamp(20px,4.3vw,41px);line-height:1.25}.welcome-actions{position:absolute;left:8%;right:8%;bottom:calc(env(safe-area-inset-bottom,0px) + clamp(34px,5.9vh,110px));display:grid;gap:clamp(13px,1.5vh,24px);animation:actions-in 850ms .3s both}.btn{display:flex;position:relative;min-height:clamp(64px,7.1vh,112px);align-items:center;justify-content:center;padding:16px 54px;border-radius:999px;text-decoration:none;text-align:center;font-weight:650;font-size:clamp(17px,3.3vw,35px);transition:transform .2s ease,background-color .2s ease,box-shadow .2s ease}.btn:focus-visible{outline:4px solid #ffffff;outline-offset:4px}.btn:active{transform:scale(.985)}.btn-primary{background:#00a65a;color:white;box-shadow:0 9px 28px rgba(0,74,47,.16)}.btn-primary:hover{background:#00974f}.arrow{position:absolute;right:5.3%;width:clamp(23px,3.3vw,38px);height:clamp(23px,3.3vw,38px)}.btn-outline{border:2px solid rgba(255,255,255,.88);background:rgba(23,38,52,.20);color:#fff;backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);font-weight:500}.btn-outline:hover{background:rgba(24,38,52,.32)}@keyframes brand-in{from{opacity:0;transform:translateY(18px) scale(.98)}to{opacity:1;transform:none}}@keyframes pin-in{from{opacity:0;transform:translateY(-12px)}to{opacity:1;transform:none}}@keyframes actions-in{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}@media(min-width:850px){.brand{top:14vh}.brand-wordmark{font-size:clamp(70px,7vw,120px)}.brand h1{font-size:clamp(24px,2.2vw,37px)}.welcome-actions{left:50%;right:auto;transform:translateX(-50%);width:min(84%,600px);bottom:6vh}.btn{min-height:70px;font-size:23px}.arrow{width:25px;height:25px}}@media(max-height:600px){.brand{top:6vh}.brand-wordmark{font-size:clamp(45px,9vh,78px)}.brand h1{font-size:clamp(16px,3vh,24px)}.welcome-actions{bottom:calc(env(safe-area-inset-bottom,0px) + 16px);gap:8px}.btn{min-height:48px;font-size:16px}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+
+/* Original MoveGo wordmark with transparent background */
+.brand-logo-img{display:block;width:min(94%,680px);height:auto;margin:0 auto;filter:drop-shadow(0 2px 8px rgba(255,255,255,.13));}
+@media (max-width:600px){.brand-logo-img{width:100%;max-width:540px}}
+
+/* MOVEGO WELCOME LOGO POSITION FIX v1 */
+.brand {
+  top: clamp(52px, 11.5svh, 170px);
+  left: 0;
+  right: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+.brand-logo-img {
+  display: block;
+  width: min(70vw, 390px);
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  object-fit: contain;
+}
+@media (min-width: 850px) {
+  .brand { top: clamp(55px, 11vh, 165px); }
+  .brand-logo-img { width: min(40vw, 460px); }
+}
+@media (max-height: 600px) {
+  .brand { top: 5svh; }
+  .brand-logo-img { width: min(55vw, 310px); }
+}
+/* END MOVEGO WELCOME LOGO POSITION FIX v1 */

@@ -1,0 +1,19 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="#ffffff"><title>MoveGo | Driver application</title><link rel="stylesheet" href="../css/driver-portal.css?v=34verify1"><script src="../js/driver-portal.js?v=34verify1" defer></script><link rel="stylesheet" href="../css/movego-back.css?v=option4-1">
+<script src="../js/movego-back.js?v=option4-1" defer></script>
+</head><body>
+<main class="shell"><header class="top"><a href="../passenger/role.html" class="back" aria-label="Go back">←</a><span class="wordmark">move<span>go</span></span><span class="top-label">DRIVER</span></header>
+<section class="intro"><p class="eyebrow">DRIVER ONBOARDING</p><h1>Drive with MoveGo.</h1><p>Submit your details for review. Approval is required before you can go online.</p></section>
+<form id="driver-form" class="panel" autocomplete="on"><h2>Identity & vehicle verification</h2>
+<div class="two"><label>First name<input name="first_name" required minlength="2" maxlength="60" autocomplete="given-name" placeholder="First name"></label><label>Last name<input name="last_name" required minlength="2" maxlength="60" autocomplete="family-name" placeholder="Last name"></label></div>
+<label>National Identification Number (NIN)<input name="nin" required inputmode="numeric" pattern="[0-9]{11}" minlength="11" maxlength="11" autocomplete="off" placeholder="11-digit NIN"></label>
+<label>Driver's licence number<input name="license_number" required minlength="2" maxlength="64" autocomplete="off" placeholder="Licence number"></label>
+<div class="two"><label>Vehicle make<input name="vehicle_make" required minlength="2" maxlength="60" placeholder="e.g. Toyota"></label><label>Vehicle model<input name="vehicle_model" required minlength="2" maxlength="60" placeholder="e.g. Corolla"></label></div>
+<div class="two"><label>Vehicle colour<input name="vehicle_color" required minlength="2" maxlength="40" placeholder="e.g. Silver"></label><label>Plate number<input name="plate_number" required minlength="3" maxlength="24" placeholder="ABC-123XY"></label></div>
+<h2>Required verification photos</h2>
+<label>NIN slip or document photo<input type="file" name="nin_document" required accept="image/jpeg,image/png,image/webp"></label>
+<label>Driver's licence photo<input type="file" name="license_photo" required accept="image/jpeg,image/png,image/webp"></label>
+<label>Selfie photo (use your camera)<input type="file" name="selfie_photo" required accept="image/*" capture="user"></label>
+<p class="hint">Use clear, uncropped photos with readable information. Each image must be less than 5 MB. Camera capture opens on supported mobile devices; otherwise choose a selfie photo. A selfie photo alone is not a live identity check.</p>
+<p class="hint">These documents contain sensitive personal information and are stored privately for authorized admin review. Do not upload someone else's identity documents. Approval is manual and not automatic NIN/licence verification.</p>
+<p class="message" id="message" role="status" aria-live="polite"></p><button type="submit" class="primary" id="submit">Submit application</button></form>
+<footer><a href="home.html">Already applied? View your driver dashboard</a></footer></main></body></html>

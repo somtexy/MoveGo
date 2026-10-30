@@ -1,0 +1,2 @@
+/* Step 26 refinements: preserve approved MoveGo layout */
+.next:disabled,.verify-btn:disabled{opacity:.55;cursor:wait} .code-boxes{grid-template-columns:repeat(6,minmax(0,1fr));gap:6px}.digit{height:56px;font-size:22px}.verify-btn:disabled{display:block}.resend-btn:disabled{cursor:not-allowed}.feedback{overflow-wrap:anywhere}@media(max-width:360px){.content{padding-left:15px;padding-right:15px}.digit{height:49px;font-size:20px}}

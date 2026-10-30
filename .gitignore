@@ -1,0 +1,63 @@
+backend/.env
+backend/.venv/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+!**/.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Django and databases
+db.sqlite3
+*.sqlite3
+*.sqlite3-journal
+*.log
+staticfiles/
+media/
+
+# Private uploads
+private_user_avatars/
+private_driver_documents/
+private_uploads/
+uploads/
+
+# Editor and operating system
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Local backups
+*.bak
+*.backup
+*.orig
+
+# MoveGo development backups
+movego-*-backup-*/
+movego_*_backup_*/
+movego-option4-back-button/
+
+# Backup copies
+*.backup-*
+*.bak-*
+*.orig
+*.old
+
+# One-time installation and repair scripts
+/install_google.py
+/repair_google.py
+
+# Local development artifacts
+/backend/python

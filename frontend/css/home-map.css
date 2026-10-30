@@ -1,0 +1,16 @@
+/* Step 32. Page layout and navigation remain unchanged. */
+#live-map { background:#e9eee9; z-index:0; }
+#live-map .leaflet-control-attribution {font:10px/1.4 Arial,sans-serif; background:#ffffffed;}
+#live-map .leaflet-control-zoom {margin-top:86px; margin-right:14px; border:0;box-shadow:0 2px 12px #12352226}
+#live-map .leaflet-control-zoom a {border-radius:8px;background:#fff;color:#174c37}
+#live-map .leaflet-bottom.leaflet-right {bottom:200px;}
+.map-header, .origin, .locate {z-index:2;}
+.bottom-sheet {z-index:3;}
+.demo-badge {text-align:center; letter-spacing:.3px; font-size:9px; max-width:205px;}
+.movego-user-dot {width:20px;height:20px;border-radius:50%;background:#1787ea;border:3px solid #fff;box-shadow:0 0 0 9px #2d9bf639,0 3px 12px #173c4580;position:relative;}
+.movego-user-dot::after {content:"";position:absolute;inset:-12px;border:1px solid #1787ea55;border-radius:50%;animation:movego-pulse 2.8s ease-out infinite;}
+@keyframes movego-pulse {0%{transform:scale(.65);opacity:1}100%{transform:scale(1.75);opacity:0}}
+.movego-demo-car {display:flex;align-items:center;justify-content:center;width:37px;height:37px;border-radius:13px;background:#fff;box-shadow:0 2px 12px #173e302e;border:1px solid #d9eee1;color:#006a45;}
+.movego-demo-car svg{width:22px;height:22px;stroke:currentColor;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.movego-demo-car-label{position:absolute;top:38px;left:-10px;font:700 9px Arial,sans-serif;background:#fff;border:1px solid #e1ebe6;border-radius:10px;padding:2px 5px;white-space:nowrap;color:#39705a}
+@media (prefers-reduced-motion:reduce) {.movego-user-dot::after{animation:none}}

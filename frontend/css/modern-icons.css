@@ -1,0 +1,12 @@
+/* Modern icon system: consistent SVGs throughout MoveGo */
+.movego-icon{width:1.3em;height:1.3em;display:inline-block;vertical-align:-.22em;flex-shrink:0;stroke:currentColor;fill:none;overflow:visible}
+.cat-icon .movego-icon,.role-icon .movego-icon,.vehicle .movego-icon{width:28px;height:28px}
+.menu-icon .movego-icon{width:21px;height:21px}
+.method .icon .movego-icon,.notif-icon .movego-icon,.feature-icon .movego-icon{width:23px;height:23px}
+.map-pin .movego-icon{width:24px;height:24px}
+.status-icon .movego-icon,.empty .emoji .movego-icon,.bell .movego-icon{width:32px;height:32px}
+.service>.movego-icon{width:24px;height:24px}
+
+/* Unified MoveGo back arrow — Lucide-style outline */
+.movego-back-icon{display:block;width:23px;height:23px;flex-shrink:0;color:inherit;}
+a.back, button#search-back{display:inline-flex;align-items:center;justify-content:center;line-height:1;}

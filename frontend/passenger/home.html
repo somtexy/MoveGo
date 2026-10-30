@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#fffdf8"><title>MoveGo | Home</title><link rel="stylesheet" href="../css/home.css?v=2"><link rel="stylesheet" href="../css/theme.css?v=1"><script src="../js/theme.js?v=1" defer></script><script src="../js/home.js?v=20-19" defer></script><link rel="stylesheet" href="../css/modern-icons.css?v=1"><script src="../js/modern-icons.js?v=1" defer></script><style>
+body.movego-auth-pending > main {visibility:hidden}
+#auth-gate {position:fixed;inset:0;z-index:99999;background:#fffdf8;color:#18392b;display:flex;align-items:center;justify-content:center;padding:24px;font:16px/1.6 system-ui,sans-serif;text-align:center}
+#auth-gate button {background:#087d4d;color:white;border:0;border-radius:12px;padding:12px 24px;font:inherit;cursor:pointer;margin-top:12px}
+</style><script src="../js/home-auth.js?v=28" defer></script><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+<link rel="stylesheet" href="../css/home-map.css?v=32-1">
+<script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script defer src="../js/home-map.js?v=32-1"></script><link rel="stylesheet" href="../css/movego-back.css?v=option4-1">
+<script src="../js/movego-back.js?v=option4-1" defer></script>
+
+<!-- MOVEGO-3D-CATEGORIES-V2 -->
+<style>
+.bottom-sheet .categories{display:flex;gap:7px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:3px 2px 7px;align-items:stretch}
+.bottom-sheet .categories::-webkit-scrollbar{display:none}
+.bottom-sheet .categories .category{flex:0 0 90px;min-width:90px;min-height:100px;scroll-snap-align:start;gap:3px;padding:9px 4px 10px;border-radius:17px;display:flex;justify-content:center;align-items:center;flex-direction:column;font-size:12px;font-weight:600;white-space:nowrap}
+.bottom-sheet .categories .category.active{background:#323b90;color:#fff}
+.bottom-sheet .categories .cat-icon.movego-3d-icon{width:84px;height:65px;margin:0;background:transparent;display:flex;justify-content:center;align-items:center;overflow:hidden;border-radius:0}
+.bottom-sheet .categories .movego-3d-icon img{width:100%;height:100%;object-fit:contain;display:block}
+.bottom-sheet .categories .movego-keke-soon{opacity:.65;cursor:not-allowed}
+@media(max-width:380px){.bottom-sheet .categories .category{flex-basis:83px;min-width:83px}.bottom-sheet .categories .cat-icon.movego-3d-icon{width:77px;height:62px}}
+</style>
+<link rel="stylesheet" href="../css/home-suggestions.css?v=part2-1"><script defer src="../js/home-suggestions.js?v=part2-1"></script><link rel="stylesheet" href="../css/menu-profile-polish.css?v=1"><script defer src="../js/menu-profile-polish.js?v=1"></script></head>
+<body class="movego-auth-pending"><div id="auth-gate" role="status"><div><strong>Checking your MoveGo account…</strong><p data-auth-message>Connecting securely to MoveGo.</p><button type="button" onclick="location.reload()" hidden>Try again</button></div></div><main class="app" aria-label="MoveGo passenger home">
+  <div class="map" id="live-map" aria-label="Interactive street map"></div>
+  <header class="map-header"><button type="button" id="menu-btn" class="circle dark" aria-label="Open menu" aria-expanded="false"><svg viewBox="0 0 24 24"><path d="M5 7h14M5 12h14M5 17h14"/></svg></button><span class="demo-badge" id="map-status">LIVE STREET MAP · DEMO CARS</span><button type="button" id="alerts-btn" class="circle" aria-label="Notifications"><svg viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/></svg></button></header>
+  <button type="button" id="location-card" class="origin"><span class="origin-small">Where from</span><span class="origin-large">Your location <span aria-hidden="true">›</span></span></button>
+  <button type="button" id="locate-btn" class="circle locate" aria-label="Request device location"><svg viewBox="0 0 24 24"><path d="m20 4-7 16-2.8-7.2L4 10l16-6Z"/></svg></button>
+  <section class="bottom-sheet" aria-label="Book a ride"><nav class="categories" aria-label="Ride types"><button class="category active" type="button" data-service="Ride" aria-pressed="true"><span class="cat-icon movego-3d-icon"><img src="/app/assets/icons/ride-categories/ride.webp" alt="" loading="eager" decoding="async"></span><span>Ride</span></button><button class="category" type="button" data-service="Comfort" aria-pressed="false"><span class="cat-icon movego-3d-icon"><img src="/app/assets/icons/ride-categories/comfort.webp" alt="" loading="eager" decoding="async"></span><span>Comfort</span></button><button class="category movego-keke-soon" type="button" disabled aria-disabled="true" title="Keke rides are coming soon"><span class="cat-icon movego-3d-icon"><img src="/app/assets/icons/ride-categories/keke.webp" alt="" loading="eager" decoding="async"></span><span>Keke</span></button><button class="category" type="button" data-service="One Click" aria-pressed="false"><span class="cat-icon movego-3d-icon"><img src="/app/assets/icons/ride-categories/inhurry.webp" alt="" loading="eager" decoding="async"></span><span>inHurry</span></button><button class="category" type="button" data-service="Couriers" aria-pressed="false"><span class="cat-icon movego-3d-icon"><img src="/app/assets/icons/ride-categories/couriers.webp" alt="" loading="eager" decoding="async"></span><span>Couriers</span></button></nav><button type="button" id="destination-btn" class="destination"><svg viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg><span>Where to &amp; for how much?</span></button></section>
+  <div id="drawer-backdrop" class="scrim" hidden></div>
+  <aside id="drawer" class="drawer" aria-label="Passenger menu" aria-hidden="true" inert>
+    <div class="drawer-head">
+      <div class="avatar" id="drawer-avatar" aria-hidden="true">M</div>
+      <div class="drawer-identity"><strong id="drawer-name">MoveGo rider</strong><span class="drawer-rating"><span aria-hidden="true">★</span> 5.0</span></div>
+      <button type="button" class="drawer-close" id="drawer-close" aria-label="Close menu">×</button>
+    </div>
+    <nav class="menu-items" aria-label="Passenger options">
+      <button type="button" class="menu-item" data-demo="City"><span class="menu-icon" aria-hidden="true">▦</span><span>City</span><span class="menu-chevron">›</span></button>
+      <button type="button" class="menu-item" data-saved-places="true"><span class="menu-icon" aria-hidden="true">⌖</span><span>Saved places</span><span class="menu-chevron">›</span></button>
+      <button type="button" class="menu-item" data-demo="Request history"><span class="menu-icon" aria-hidden="true">◷</span><span>Request history</span><span class="menu-chevron">›</span></button>
+      <button type="button" class="menu-item" data-demo="Couriers"><span class="menu-icon" aria-hidden="true">⬡</span><span>Couriers</span><span class="menu-chevron">›</span></button>
+      <button type="button" class="menu-item" data-notifications="true"><span class="menu-icon" aria-hidden="true">♧</span><span>Notifications</span><span class="notice-dot" id="notice-dot" aria-label="Unread notifications indicator"></span></button>
+      <button type="button" class="menu-item" data-demo="Safety"><span class="menu-icon" aria-hidden="true">♢</span><span>Safety</span><span class="menu-chevron">›</span></button>
+      <button type="button" class="menu-item" data-account="true"><span class="menu-icon" aria-hidden="true">⚙</span><span>Settings</span><span class="menu-chevron">›</span></button>
+      <button type="button" class="menu-item" data-demo="Help"><span class="menu-icon" aria-hidden="true">?</span><span>Help</span><span class="menu-chevron">›</span></button>
+      <button type="button" class="menu-item" data-demo="Support"><span class="menu-icon" aria-hidden="true">▤</span><span>Support</span><span class="menu-chevron">›</span></button>
+    </nav>
+    <div class="theme-row"><span class="theme-label"><span class="menu-icon" aria-hidden="true">☾</span> Dark mode</span><button type="button" role="switch" aria-checked="false" aria-label="Dark mode" id="theme-toggle" class="theme-switch"><span class="switch-knob"></span></button></div>
+    <a class="driver-mode" href="role.html">Driver mode <span aria-hidden="true">↗</span></a>
+    <div class="drawer-social" aria-label="Social links coming later"><span>f</span><span>◎</span><span>𝕏</span></div>
+
+  </aside>
+  <div id="search-backdrop" class="scrim search-scrim" hidden></div><section id="search-panel" class="search-panel" aria-hidden="true" aria-label="Destination search"><header><button type="button" id="search-back" aria-label="Close destination search">←</button><h2>Where to?</h2></header><label for="destination-input">Destination</label><input type="search" id="destination-input" placeholder="Enter a destination" autocomplete="off"><p class="hint">Demo only: search and select a destination. Real routing and prices are not connected.</p><div id="suggestions" class="suggestions"></div><div id="trip-preview" class="trip-preview" hidden></div></section>
+  <div id="toast" role="status" aria-live="polite" class="toast" hidden></div>
+</main></body></html>

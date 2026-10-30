@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
+<meta content="#fffdf8" name="theme-color"/>
+<title>MoveGo | Verify phone</title>
+<link href="../css/verify.css?v=1" rel="stylesheet"/>
+<script defer="" src="../js/verify.js?v=26"></script>
+<link href="../css/modern-icons.css?v=1" rel="stylesheet"/><script defer="" src="../js/modern-icons.js?v=1"></script><link href="../css/step26.css?v=26" rel="stylesheet"/><link rel="stylesheet" href="../css/movego-back.css?v=option4-1">
+<script src="../js/movego-back.js?v=option4-1" defer></script>
+</head>
+<body>
+<main class="verify-screen">
+<header class="topbar">
+<a aria-label="Back to phone number" class="back" href="./phone.html"><svg aria-hidden="true" class="movego-back-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 12H5"></path><path d="m12 19-7-7 7-7"></path></svg></a>
+</header>
+<section aria-labelledby="verify-heading" class="content">
+<h1 id="verify-heading">Enter the code</h1>
+<p class="subheading">We sent a six-digit SMS code to <strong id="phone-display">your phone number</strong></p>
+<p class="demo-disclaimer">Enter the code received by SMS. Never share your code.</p>
+<form id="verify-form" novalidate="">
+<div aria-label="Six-digit verification code" class="code-boxes" role="group">
+<input aria-label="Digit 1" autocomplete="one-time-code" class="digit" inputmode="numeric" maxlength="1" pattern="[0-9]*" required="" type="text"/>
+<input aria-label="Digit 2" class="digit" inputmode="numeric" maxlength="1" pattern="[0-9]*" required="" type="text"/>
+<input aria-label="Digit 3" class="digit" inputmode="numeric" maxlength="1" pattern="[0-9]*" required="" type="text"/>
+<input aria-label="Digit 4" class="digit" inputmode="numeric" maxlength="1" pattern="[0-9]*" required="" type="text"/>
+<input aria-label="Digit 5" class="digit" inputmode="numeric" maxlength="1" pattern="[0-9]*" required="" type="text"/><input aria-label="Digit 6" class="digit" inputmode="numeric" maxlength="1" pattern="[0-9]*" required="" type="text"/></div>
+<p aria-live="polite" class="feedback" id="verify-message" role="status"></p>
+<button class="verify-btn" disabled="" id="verify-btn" type="submit">Verify code</button>
+</form>
+<button class="resend-btn" disabled="" id="resend" type="button">Resend SMS code <span id="countdown">01:00</span></button>
+</section>
+<img alt="Illustration of WhatsApp on a smartphone" class="bottom-art" src="../assets/images/otp-whatsapp-art.png?v=1"/>
+</main>
+</body>
+</html>

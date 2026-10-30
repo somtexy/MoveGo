@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
+<meta content="#fffdf8" name="theme-color"/>
+<meta content="Sign in to MoveGo using your phone number." name="description"/>
+<title>MoveGo | Phone number</title>
+<link href="../css/phone.css?v=2" rel="stylesheet"/>
+<script defer="" src="../js/phone.js?v=26"></script>
+<link href="../css/modern-icons.css?v=1" rel="stylesheet"/><script defer="" src="../js/modern-icons.js?v=1"></script><script defer="" src="../js/api-client.js?v=26"></script><link href="../css/step26.css?v=26" rel="stylesheet"/><link rel="stylesheet" href="../css/movego-back.css?v=option4-1">
+<script src="../js/movego-back.js?v=option4-1" defer></script>
+</head>
+<body>
+<main class="phone-screen">
+<header class="topbar"><a aria-label="Back to welcome screen" class="back" href="./index.html"><svg aria-hidden="true" class="movego-back-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 12H5"></path><path d="m12 19-7-7 7-7"></path></svg></a></header>
+<section aria-labelledby="page-title" class="intro">
+<h1 id="page-title">Join us via<br/>phone number</h1>
+<p>We'll send a six-digit SMS code to verify your phone.</p>
+<form id="phone-form" novalidate="">
+<div class="number-field" id="number-field">
+<span aria-hidden="true" class="flag"><span></span><span></span><span></span></span>
+<label class="sr-only" for="country">Country code</label>
+<select aria-label="Country dialling code" id="country"><option selected="" value="+234">🇳🇬 +234</option></select>
+<span aria-hidden="true" class="separator"></span>
+<label class="sr-only" for="phone">Phone number</label>
+<input aria-describedby="phone-help" autocomplete="tel-national" id="phone" inputmode="tel" maxlength="16" name="phone" placeholder="7070985813" required="" type="tel"/>
+</div>
+<p aria-live="polite" class="help" id="phone-help" role="status"></p>
+<button class="next" id="next" type="submit">Next <span aria-hidden="true" class="arrow">→</span></button>
+</form>
+</section>
+<div aria-label="Illustration of a car travelling through a green city" class="city-art" role="img"></div>
+</main>
+</body>
+</html>

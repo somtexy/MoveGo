@@ -1,0 +1,1 @@
+Step 18: Safety Center. Navigate Home > menu > Safety, or open passenger/safety.html. Emergency tools and live trip sharing are NOT functional. Trusted contact is saved locally only. Django integration is pending. Keep your customized onboarding images when merging.

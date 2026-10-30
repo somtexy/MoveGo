@@ -1,0 +1,6 @@
+.gps-actions{display:flex;flex-wrap:wrap;gap:10px;margin:15px 0}
+.gps-actions button{border:0;border-radius:12px;padding:12px 15px;font:inherit;font-weight:650;cursor:pointer}
+#gps-start{background:#169b62;color:white}
+#gps-stop{background:#e7e9e8;color:#26382f}
+.gps-actions button:disabled{opacity:.45;cursor:not-allowed}
+#gps-status{font-size:.9rem;line-height:1.5}

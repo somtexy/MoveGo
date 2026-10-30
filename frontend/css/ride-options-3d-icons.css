@@ -1,0 +1,6 @@
+/* MoveGo 3D illustration alignment in fare option cards */
+#options .option .vehicle { width:66px; min-width:66px; height:60px; display:flex; align-items:center; justify-content:center; overflow:visible; background:transparent; font-size:0; }
+#options .option .movego-ride-3d { display:block; width:66px; height:60px; object-fit:contain; background:transparent; }
+#options .movego-keke-option { opacity:.56; cursor:not-allowed; }
+#options .movego-keke-option .price { font-size:12px; }
+@media(max-width:370px){#options .option .vehicle{width:54px;min-width:54px;height:53px}#options .option .movego-ride-3d{width:54px;height:53px}}
