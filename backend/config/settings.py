@@ -14,8 +14,8 @@ if not DEBUG and SECRET_KEY.startswith("insecure-development"):
 ALLOWED_HOSTS = [
     h.strip()
     for h in os.environ.get(
-        "DJANGO_ALLOWED_HOSTS",
-        "127.0.0.1,localhost,192.168.41.193"
+         "DJANGO_ALLOWED_HOSTS",
+        "127.0.0.1,localhost,movego-7n7u.onrender.com"
     ).split(",")
     if h.strip()
 ]
