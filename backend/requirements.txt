@@ -24,3 +24,5 @@ urllib3==2.8.0
 yarl==1.25.1
 gunicorn>=23.0,<24.0
 Pillow>=11.3,<13
+google-auth>=2.0,<3.0
+google-auth-oauthlib>=1.2,<2.0
