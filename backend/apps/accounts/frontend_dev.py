@@ -14,8 +14,7 @@ ALLOWED_SUFFIXES = {".html", ".css", ".js", ".svg", ".png", ".jpg", ".jpeg", ".w
 
 @require_GET
 def frontend_asset(request, asset_path):
-    if not settings.DEBUG:
-        raise Http404()
+    
     if asset_path.split("/", 1)[0] not in ALLOWED_ROOTS:
         raise Http404()
     file_path = (FRONTEND_ROOT / asset_path).resolve()
