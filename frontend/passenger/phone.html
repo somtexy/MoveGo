@@ -6,6 +6,10 @@
 <meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
 <meta content="#fffdf8" name="theme-color"/>
 <meta content="Sign in to MoveGo using your phone number." name="description"/>
+<link rel="manifest" href="/app/passenger/manifest.json">
+<meta name="theme-color" content="#16824a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
 <title>MoveGo | Phone number</title>
 <link href="../css/phone.css?v=2" rel="stylesheet"/>
 <script defer="" src="../js/phone.js?v=26"></script>
@@ -33,5 +37,14 @@
 </section>
 <div aria-label="Illustration of a car travelling through a green city" class="city-art" role="img"></div>
 </main>
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("/app/passenger/sw.js")
+      .catch(console.error);
+  });
+}
+</script>
+
 </body>
 </html>

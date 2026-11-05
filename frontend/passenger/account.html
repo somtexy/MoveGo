@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 
-<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/><meta content="#fffdf8" name="theme-color"/><title>MoveGo | Profile &amp; Settings</title><link href="../css/account.css?v=1" rel="stylesheet"/><script defer="" src="../js/api-client.js?v=1"></script><script defer="" src="../js/account.js?v=27"></script><link href="../css/modern-icons.css?v=1" rel="stylesheet"/><script defer="" src="../js/modern-icons.js?v=1"></script><link rel="stylesheet" href="../css/movego-back.css?v=option4-1">
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/><meta content="#fffdf8" name="theme-color"/>
+<link rel="manifest" href="/app/passenger/manifest.json">
+<meta name="theme-color" content="#16824a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<title>MoveGo | Profile &amp; Settings</title><link href="../css/account.css?v=1" rel="stylesheet"/><script defer="" src="../js/api-client.js?v=1"></script><script defer="" src="../js/account.js?v=27"></script><link href="../css/modern-icons.css?v=1" rel="stylesheet"/><script defer="" src="../js/modern-icons.js?v=1"></script><link rel="stylesheet" href="../css/movego-back.css?v=option4-1">
 <script src="../js/movego-back.js?v=option4-1" defer></script>
 <link rel="stylesheet" href="../css/avatar-upload.css?v=1"></head>
 <body><main class="app"><header class="top"><a aria-label="Back to home" class="back" href="home.html"><svg aria-hidden="true" class="movego-back-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 12H5"></path><path d="m12 19-7-7 7-7"></path></svg></a><strong>Profile &amp; settings</strong><span class="tag">ACCOUNT</span></header>
@@ -14,4 +19,13 @@
 <section class="panel" aria-labelledby="session-title"><h2 id="session-title">MoveGo account</h2><p class="muted" id="session-message" aria-live="polite">Checking your MoveGo sign-in status…</p><button class="primary" type="button" id="session-logout" hidden>Log out of MoveGo</button><p class="muted small">Your account is protected with MoveGo sign-in and phone verification.</p></section>
 <section class="panel"><h2>Preferences</h2><div class="setting"><div><strong>Dark mode</strong><small>Optional — light mode is the default</small></div><button aria-checked="false" aria-label="Enable dark mode" class="switch" id="theme-toggle" role="switch" type="button"><span></span></button></div><p class="muted small">The same preference is also controlled by the switch in the home navigation menu.</p></section>
 <section class="panel"><h2>Account</h2><div class="setting"><div><strong>Phone verification</strong><small>Managed through your verified MoveGo phone number</small></div><span class="pending">MoveGo</span></div><div class="setting"><div><strong>Payment methods</strong><small>Paystack setup in the backend phase</small></div><span class="pending">Pending</span></div><a class="row-link" href="history.html">View ride history <span>›</span></a></section>
-<p class="footer">MoveGo · Your account, your journey.</p></main><script src="../js/avatar-upload.js?v=1" defer></script></body></html>
+<p class="footer">MoveGo · Your account, your journey.</p></main><script src="../js/avatar-upload.js?v=1" defer></script>
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("/app/passenger/sw.js")
+      .catch(console.error);
+  });
+}
+</script>
+</body></html>

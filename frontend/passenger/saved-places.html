@@ -2,10 +2,26 @@
 
 <html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/><meta content="#fffdf8" name="theme-color"/><title>Saved Places | MoveGo</title><link href="../css/saved-places.css?v=20" rel="stylesheet"/><script defer="" src="../js/theme.js?v=20"></script><script defer="" src="../js/saved-places.js?v=20"></script><link href="../css/modern-icons.css?v=1" rel="stylesheet"/><script defer="" src="../js/modern-icons.js?v=1"></script><link rel="stylesheet" href="../css/movego-back.css?v=option4-1">
 <script src="../js/movego-back.js?v=option4-1" defer></script>
+<link rel="manifest" href="/app/passenger/manifest.json">
+<meta name="theme-color" content="#16824a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
 </head>
 <body><main class="app"><header class="top"><a aria-label="Back to home" class="back" href="home.html"><svg aria-hidden="true" class="movego-back-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 12H5"></path><path d="m12 19-7-7 7-7"></path></svg></a><div><strong>Saved places</strong><small>Quick access to your favourite locations</small></div><span class="tag">DEMO</span></header>
 <section class="hero"><span class="eyebrow">MOVEGO PLACES</span><h1>Everywhere you go, easier.</h1><p>Save Home, Work, or any favourite destination to select it when booking.</p></section>
 <div class="notice" role="note"><b>Local preview</b> Addresses are stored only on this device and are not map-verified. We'll connect them to Django and real map search later.</div>
 <section class="places-section"><div class="heading"><h2>Your places</h2><button class="small-btn" id="add" type="button">+ Add place</button></div><div aria-live="polite" class="places-list" id="places-list"></div><p class="empty" hidden="" id="empty">No places saved yet. Add Home, Work, or a favourite destination.</p></section>
 <section class="form-panel" hidden="" id="editor"><div class="heading"><h2 id="editor-heading">Add saved place</h2><button aria-label="Close editor" class="dismiss" id="close" type="button">✕</button></div><form id="place-form" novalidate=""><label for="place-label">Label</label><select id="place-label"><option>Home</option><option>Work</option><option>Other</option></select><div hidden="" id="custom-wrap"><label for="custom-label">Place name</label><input autocomplete="off" id="custom-label" maxlength="45" placeholder="e.g. Gym"/></div><label for="address">Address</label><textarea id="address" maxlength="180" placeholder="Street, area, city" required="" rows="3"></textarea><p class="error" id="error" role="alert"></p><button class="primary" type="submit">Save place</button><button class="secondary" id="cancel" type="button">Cancel</button></form></section>
-<p class="footnote">Saved locations are suggestions, not confirmed geographic coordinates.</p></main></body></html>
+<p class="footnote">Saved locations are suggestions, not confirmed geographic coordinates.</p></main>
+
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("/app/passenger/sw.js")
+      .catch(console.error);
+  });
+}
+</script>
+
+</body>
+</html>

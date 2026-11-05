@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#fffdf8">
   <meta name="description" content="MoveGo — your ride, your way.">
+  <link rel="manifest" href="/app/passenger/manifest.json">
+<meta name="theme-color" content="#16824a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
   <title>MoveGo | Welcome</title>
   <link rel="stylesheet" href="../css/onboarding.css">
   <script src="../js/onboarding.js?v=4" defer></script>
@@ -59,5 +63,14 @@
   <dialog class="notice" id="notice" aria-labelledby="notice-title" aria-describedby="notice-text">
     <div class="notice-body"><h2 id="notice-title">Coming next</h2><p id="notice-text"></p><button id="notice-close" class="notice-close" type="button">Got it</button></div>
   </dialog>
+
+  <script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("/app/passenger/sw.js")
+      .catch(console.error);
+  });
+}
+</script>
 </body>
 </html>

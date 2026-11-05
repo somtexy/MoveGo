@@ -2,6 +2,10 @@
 
 <html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/><meta content="#fffdf8" name="theme-color"/><title>MoveGo | Help &amp; Support</title><link href="../css/help.css?v=19" rel="stylesheet"/><script defer="" src="../js/theme.js?v=1"></script><script defer="" src="../js/help.js?v=19"></script><link href="../css/modern-icons.css?v=1" rel="stylesheet"/><script defer="" src="../js/modern-icons.js?v=1"></script><link rel="stylesheet" href="../css/movego-back.css?v=option4-1">
 <script src="../js/movego-back.js?v=option4-1" defer></script>
+<link rel="manifest" href="/app/passenger/manifest.json">
+<meta name="theme-color" content="#16824a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
 </head>
 <body><main class="app"><header class="top"><a aria-label="Back to home" class="back" href="home.html"><svg aria-hidden="true" class="movego-back-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 12H5"></path><path d="m12 19-7-7 7-7"></path></svg></a><div><strong>Help &amp; Support</strong><small>Answers and assistance</small></div><span class="tag">DEMO</span></header>
 <section class="hero"><span class="eyebrow">MOVEGO SUPPORT</span><h1>How can we help?</h1><p>Find answers and preview how support requests will work.</p></section>
@@ -9,4 +13,13 @@
 <section aria-labelledby="faq-heading"><h2 id="faq-heading">Frequently asked questions</h2><div class="faq"><details><summary>How do I book a ride?</summary><p>From the home screen, select your pickup and destination, choose a ride option and payment preference, then review the trip. Booking is a demo until the Django backend is connected.</p></details><details><summary>Can I cancel a ride?</summary><p>Ride cancellations and any applicable fees will be enabled when real bookings and cancellation policies are implemented.</p></details><details><summary>How are fares calculated?</summary><p>Prices currently shown are examples. Real fares will be calculated on the Django server using verified route and pricing data.</p></details><details><summary>How can I pay?</summary><p>Cash and online payment are shown as options. Actual online payments will require secure Paystack and Django integration.</p></details><details><summary>How do I report a safety issue?</summary><p>The Safety Center is currently a preview. This demo form does not reach a human responder. If immediate help is needed, contact emergency services directly.</p></details></div></section>
 <section aria-labelledby="report-heading" class="form-section"><h2 id="report-heading">Report an issue</h2><p class="muted">Save a sample support request in this browser to test the interface.</p><form id="support-form" novalidate=""><label for="category">Issue category</label><select id="category" required=""><option value="">Choose a category</option><option value="Ride experience">Ride experience</option><option value="Payment question">Payment question</option><option value="Account access">Account access</option><option value="App issue">App issue</option><option value="Other">Other</option></select><label for="subject">Subject</label><input id="subject" maxlength="90" placeholder="Briefly describe the issue" required=""/><label for="details">What happened?</label><textarea id="details" maxlength="1000" placeholder="Explain the issue (demo only)" required="" rows="4"></textarea><p class="muted" id="char-count">0 / 1000 characters</p><button class="primary" type="submit">Save demo request</button><p aria-live="polite" class="feedback" id="form-message" role="status"></p></form></section>
 <section aria-labelledby="requests-heading"><div class="section-head"><h2 id="requests-heading">My demo requests</h2><span class="tag">LOCAL ONLY</span></div><div aria-live="polite" class="requests" id="requests-list"></div><button class="secondary" id="clear-requests" type="button">Clear demo requests</button><p class="muted small">Demo status labels are not updates from a support team.</p></section>
-</main></body></html>
+</main>
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("/app/passenger/sw.js")
+      .catch(console.error);
+  });
+}
+</script>
+</body></html>

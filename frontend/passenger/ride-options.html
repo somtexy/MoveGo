@@ -4,6 +4,10 @@
 <!-- MOVEGO-RIDE-OPTIONS-3D-V1 -->
 <link rel="stylesheet" href="../css/ride-options-3d-icons.css?v=1">
 <script src="../js/ride-options-3d-icons.js?v=1" defer></script>
+<link rel="manifest" href="/app/passenger/manifest.json">
+<meta name="theme-color" content="#16824a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
 </head>
 <body><main class="app"><header class="top"><a href="destination.html" aria-label="Back to destination search" class="back">&#8592;</a><h1>Choose your ride</h1><span class="badge">FARE PREVIEW</span></header>
 <section class="route"><div class="route-row"><span class="marker green"></span><div><small>Pickup</small><strong id="pickup">Not selected</strong></div></div><span class="connector"></span><div class="route-row"><span class="marker dark"></span><div><small>Destination</small><strong id="dropoff">Not selected</strong></div></div></section>
@@ -11,4 +15,16 @@
 <section class="content"><div class="heading"><div><p class="eyebrow">CHOOSE A SERVICE</p><h2>Ride options</h2></div><span class="subtle">Prices in ₦</span></div><div class="warning"><strong>Backend-calculated starter fares.</strong> The amounts and durations shown use an illustrative trip. Fares are calculated using live routing and illustrative starter tariffs, not approved commercial prices. Ride booking remains unavailable.</div>
 <div id="options" class="options" role="group" aria-label="Available ride types"></div>
 <section class="details"><h3>Trip details</h3><div class="detail"><span>Driving distance</span><strong>—</strong></div><div class="detail"><span>Estimated fare</span><strong id="fare">—</strong></div><div class="detail"><span>Estimated duration</span><strong id="duration">—</strong></div><div class="detail"><span>Payment method</span><strong>Not configured</strong></div></section>
-<div class="footer"><p id="notice" role="status">Choose an option to see its sample fare.</p><button id="request" type="button" disabled>Request ride — not connected</button><a href="destination.html" class="edit">Edit locations</a></div></section></main></body></html>
+<div class="footer"><p id="notice" role="status">Choose an option to see its sample fare.</p><button id="request" type="button" disabled>Request ride — not connected</button><a href="destination.html" class="edit">Edit locations</a></div></section></main>
+
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("/app/passenger/sw.js")
+      .catch(console.error);
+  });
+}
+</script>
+
+</body>
+</html>

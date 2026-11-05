@@ -5,6 +5,10 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
 <meta content="#fffdf8" name="theme-color"/>
+<link rel="manifest" href="/app/passenger/manifest.json">
+<meta name="theme-color" content="#16824a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
 <title>MoveGo | Verify phone</title>
 <link href="../css/verify.css?v=1" rel="stylesheet"/>
 <script defer="" src="../js/verify.js?v=26"></script>
@@ -34,5 +38,15 @@
 </section>
 <img alt="Illustration of WhatsApp on a smartphone" class="bottom-art" src="../assets/images/otp-whatsapp-art.png?v=1"/>
 </main>
+
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("/app/passenger/sw.js")
+      .catch(console.error);
+  });
+}
+</script>
+
 </body>
 </html>

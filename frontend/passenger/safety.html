@@ -2,10 +2,26 @@
 
 <html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/><meta content="#fffdf8" name="theme-color"/><title>MoveGo | Safety Center</title><link href="../css/safety.css?v=1" rel="stylesheet"/><script defer="" src="../js/safety.js?v=1"></script><link href="../css/modern-icons.css?v=1" rel="stylesheet"/><script defer="" src="../js/modern-icons.js?v=1"></script><link rel="stylesheet" href="../css/movego-back.css?v=option4-1">
 <script src="../js/movego-back.js?v=option4-1" defer></script>
+<link rel="manifest" href="/app/passenger/manifest.json">
+<meta name="theme-color" content="#16824a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
 </head>
 <body><main class="app"><header class="top"><a aria-label="Back to home" class="back" href="home.html"><svg aria-hidden="true" class="movego-back-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 12H5"></path><path d="m12 19-7-7 7-7"></path></svg></a><div class="heading"><strong>Safety Center</strong><small>Stay informed, travel with care</small></div><span class="tag">PREVIEW</span></header>
 <section class="hero"><span class="eyebrow">MOVEGO SAFETY</span><h1>Your safety matters.</h1><p>Explore safety features we're preparing for passengers. Emergency assistance and live sharing are <strong>not active</strong> in this preview.</p><div aria-hidden="true" class="shield">♢</div></section>
 <section class="notice" role="note"><strong>⚠ Emergency tools are not connected</strong><p>This screen cannot dispatch help, contact authorities, or share your live location. In an emergency, contact local emergency services directly using your phone.</p></section>
 <h2>Safety tools</h2><div class="features"><article class="feature"><div class="feature-icon">🆘</div><div><h3>Emergency assistance</h3><p>Planned: one-touch access to emergency support during real rides.</p><span class="state">Not available yet</span></div></article><article class="feature"><div class="feature-icon">↗</div><div><h3>Share your trip</h3><p>Planned: share live trip details and location with someone you trust.</p><span class="state">Not available yet</span></div></article><article class="feature"><div class="feature-icon">✓</div><div><h3>Verified drivers</h3><p>Driver identity and vehicle verification will be implemented and enforced through Django.</p><span class="state">Backend pending</span></div></article></div>
 <section class="contacts"><div class="section-heading"><div><h2>Trusted contact</h2><p>Save a contact name and phone number on this device for future integration.</p></div><span class="tag">LOCAL ONLY</span></div><form id="contact-form" novalidate=""><label for="contact-name">Contact name</label><input autocomplete="off" id="contact-name" maxlength="80" name="contact-name" placeholder="e.g. Family member" required=""/><label for="contact-phone">Phone number</label><input autocomplete="off" id="contact-phone" inputmode="tel" maxlength="20" name="contact-phone" placeholder="e.g. +234 801 234 5678" required="" type="tel"/><button class="primary" type="submit">Save trusted contact</button></form><button class="secondary" id="remove-contact" type="button">Remove saved contact</button><p aria-live="polite" class="feedback" id="contact-status" role="status"></p><p class="fineprint">Saving a contact does not notify them or activate emergency sharing. Information is saved only in this browser; avoid using a shared device.</p></section>
-<section class="tips"><h2>Travel safety tips</h2><ul><li>Before entering, check the driver's identity and vehicle registration.</li><li>Choose a safe, well-lit pickup location.</li><li>Tell someone you trust where you're going.</li><li>If you feel unsafe, prioritize reaching a safe public place and contacting emergency services.</li></ul></section></main></body></html>
+<section class="tips"><h2>Travel safety tips</h2><ul><li>Before entering, check the driver's identity and vehicle registration.</li><li>Choose a safe, well-lit pickup location.</li><li>Tell someone you trust where you're going.</li><li>If you feel unsafe, prioritize reaching a safe public place and contacting emergency services.</li></ul></section></main>
+
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("/app/passenger/sw.js")
+      .catch(console.error);
+  });
+}
+</script>
+
+</body>
+</html>

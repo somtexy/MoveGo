@@ -2,10 +2,23 @@
 
 <html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/><meta content="#ffffff" name="theme-color"/><title>Payment method | MoveGo</title><link href="../css/payment.css?v=1" rel="stylesheet"/><script defer="" src="../js/theme.js?v=1"></script><script defer="" src="../js/payment.js?v=1"></script><link href="../css/modern-icons.css?v=1" rel="stylesheet"/><script defer="" src="../js/modern-icons.js?v=1"></script><link rel="stylesheet" href="../css/movego-back.css?v=option4-1">
 <script src="../js/movego-back.js?v=option4-1" defer></script>
+<link rel="manifest" href="/app/passenger/manifest.json">
+<meta name="theme-color" content="#16824a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
 </head>
 <body><main class="app"><header class="top"><a aria-label="Go back to ride options" class="back" href="ride-options.html"><svg aria-hidden="true" class="movego-back-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 12H5"></path><path d="m12 19-7-7 7-7"></path></svg></a><h1>Payment method</h1><span class="demo">PREVIEW</span></header>
 <section class="intro"><p class="eyebrow">PAYMENT PREFERENCES</p><h2>How would you like to pay?</h2><p>Select a preferred method for this trip. No money will be charged on this screen.</p></section>
 <section aria-label="Trip summary" class="summary"><div class="summary-heading">Your trip <span>DEMO</span></div><div class="route"><div><span class="dot pickup"></span><p><small>Pickup</small><strong id="pickup">Not selected</strong></p></div><div><span class="dot destination"></span><p><small>Destination</small><strong id="destination">Not selected</strong></p></div></div><div class="summary-row"><span>Service</span><strong id="service">—</strong></div><div class="summary-row"><span>Illustrative fare</span><strong id="fare">—</strong></div></section>
 <section aria-labelledby="methods-title" class="methods"><h3 id="methods-title">Available methods</h3><label class="method" id="cash-option"><input name="payment" type="radio" value="cash"/><span aria-hidden="true" class="icon">💵</span><span class="method-text"><strong>Cash</strong><small>Pay your driver after the trip. Selection only.</small></span><span aria-hidden="true" class="radio-indicator"></span></label><label class="method" id="online-option"><input name="payment" type="radio" value="paystack"/><span aria-hidden="true" class="icon">💳</span><span class="method-text"><strong>Pay online</strong><small>Paystack integration coming soon. No card details collected.</small></span><span aria-hidden="true" class="radio-indicator"></span></label></section>
 <div class="notice" role="note"><strong>Frontend preview</strong><p>Trip fares are sample values, not live quotes. Payment authorization, server-side fare validation and ride booking will be implemented with Django. Never enter real payment information here.</p></div>
-<div class="bottom"><p aria-live="polite" id="message" role="status">Choose a payment method to continue.</p><button disabled="" id="save" type="button">Continue to confirmation →</button><a href="ride-options.html">Back to ride options</a></div></main></body></html>
+<div class="bottom"><p aria-live="polite" id="message" role="status">Choose a payment method to continue.</p><button disabled="" id="save" type="button">Continue to confirmation →</button><a href="ride-options.html">Back to ride options</a></div></main>
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("/app/passenger/sw.js")
+      .catch(console.error);
+  });
+}
+</script>
+</body></html>

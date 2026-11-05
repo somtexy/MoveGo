@@ -1,4 +1,9 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MoveGo | App PIN</title><link rel="stylesheet" href="../css/app-pin.css?v=37"><link rel="stylesheet" href="../css/movego-back.css?v=option4-1"><script src="../js/movego-back.js?v=option4-1" defer></script><script src="../js/app-pin.js?v=37" defer></script></head><body>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MoveGo | App PIN</title>
+  <link rel="manifest" href="/app/passenger/manifest.json">
+<meta name="theme-color" content="#16824a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <link rel="stylesheet" href="../css/app-pin.css?v=37"><link rel="stylesheet" href="../css/movego-back.css?v=option4-1"><script src="../js/movego-back.js?v=option4-1" defer></script><script src="../js/app-pin.js?v=37" defer></script></head><body>
 <main class="shell"><header><a class="back" href="./role.html" aria-label="Back"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></a><span class="brand">MoveGo</span></header>
 <section class="content"><div class="lock" aria-hidden="true">🔒</div><h1>Secure your account</h1><p class="lead">Create or verify your optional six-digit app PIN. This is not a device passkey or a replacement for login.</p>
 <div id="loading" role="status">Checking PIN status…</div>
@@ -13,4 +18,13 @@
   <form id="pin-recovery-reset" hidden><label>New six-digit PIN<input id="pin-recovery-new" type="password" autocomplete="new-password" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" required></label><label>Confirm new PIN<input id="pin-recovery-confirm" type="password" autocomplete="new-password" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" required></label><button type="submit">Reset PIN</button></form>
   <button id="pin-recovery-cancel" class="quiet" type="button">Close recovery</button>
 </section>
-<p id="feedback" role="status" aria-live="polite"></p><a class="skip" href="./role.html">Continue to MoveGo</a><p class="fine">PIN recovery requires a fresh SMS code sent to your verified phone number.</p></section></main><script src="../js/pin-recovery.js?v=38" defer></script></body></html>
+<p id="feedback" role="status" aria-live="polite"></p><a class="skip" href="./role.html">Continue to MoveGo</a><p class="fine">PIN recovery requires a fresh SMS code sent to your verified phone number.</p></section></main><script src="../js/pin-recovery.js?v=38" defer></script>
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("/app/passenger/sw.js")
+      .catch(console.error);
+  });
+}
+</script>
+</body></html>

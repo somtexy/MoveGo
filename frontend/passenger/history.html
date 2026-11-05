@@ -1,5 +1,17 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/><meta content="#fffdf8" name="theme-color"/><title>Request history | MoveGo</title><link href="../css/history.css?v=15" rel="stylesheet"/><script defer="" src="../js/theme.js?v=15"></script><script defer="" src="../js/history.js?v=15"></script><link href="../css/modern-icons.css?v=1" rel="stylesheet"/><script defer="" src="../js/modern-icons.js?v=1"></script><link rel="stylesheet" href="../css/movego-back.css?v=option4-1">
+<link rel="manifest" href="/app/passenger/manifest.json">
+<meta name="theme-color" content="#16824a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
 <script src="../js/movego-back.js?v=option4-1" defer></script>
 </head><body><main class="app"><header class="top"><a aria-label="Back to passenger home" class="back" href="home.html"><svg aria-hidden="true" class="movego-back-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 12H5"></path><path d="m12 19-7-7 7-7"></path></svg></a><h1>Request history</h1><span class="tag">DEMO</span></header><section class="intro"><h2>Your trips</h2><p>This preview shows only trips you explicitly save during the frontend simulation. No real bookings or payments have occurred.</p></section><div aria-label="Filter trip history" class="tabs" role="group"><button aria-pressed="true" class="active" data-filter="all" type="button">All</button><button aria-pressed="false" data-filter="completed" type="button">Completed</button><button aria-pressed="false" data-filter="cancelled" type="button">Cancelled</button></div><section aria-live="polite" class="trip-list" id="trip-list"></section><section aria-labelledby="detail-heading" class="detail" hidden="" id="detail"><div class="detail-header"><h2 id="detail-heading">Trip details</h2><button aria-label="Close trip details" id="close-detail" type="button">×</button></div><p class="tag">DEMO RECEIPT — NOT PROOF OF PAYMENT</p><div id="detail-content"></div><button class="outline" id="copy-receipt" type="button">Copy demo receipt</button><p aria-live="polite" id="copy-status" role="status"></p></section><a class="home-link" href="home.html">← Back to home</a></main><script src="../js/ride-management.js?v=40" defer></script>
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("/app/passenger/sw.js")
+      .catch(console.error);
+  });
+}
+</script>
 </body></html>
