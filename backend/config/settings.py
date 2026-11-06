@@ -74,3 +74,9 @@ X_FRAME_OPTIONS = "DENY"
 
 # Never enable the development OTP transport in production.
 MOVEGO_OTP_DEV_CONSOLE = DEBUG and os.environ.get("MOVEGO_OTP_DEV_CONSOLE", "false").lower() == "true"
+
+SESSION_EXPIRE_AT_BROWSER_CLOSE = False
+
+SESSION_COOKIE_AGE = 2592000
+
+SESSION_SAVE_EVERY_REQUEST = True

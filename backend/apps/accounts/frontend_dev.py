@@ -15,7 +15,7 @@ ALLOWED_SUFFIXES = {".html", ".css", ".js", ".svg", ".png", ".jpg", ".jpeg", ".w
 @require_GET
 def frontend_asset(request, asset_path):
     
-    if asset_path.split("/", 1)[0] not in ALLOWED_ROOTS:
+    if asset_path != "movego-sw.js" and asset_path.split("/", 1)[0] not in ALLOWED_ROOTS:
         raise Http404()
     file_path = (FRONTEND_ROOT / asset_path).resolve()
     if not file_path.is_relative_to(FRONTEND_ROOT) or not file_path.is_file() or file_path.suffix.lower() not in ALLOWED_SUFFIXES:
